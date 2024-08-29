@@ -6,6 +6,7 @@ pub enum WebAlertResponse {
     InputCancel(String),
 }
 
+/// Bevy plugin to register the required machinery to receive events from web (on wasm) and register the `WebAlertResponse` event with bevy.
 pub struct WebAlertsPlugin;
 impl Plugin for WebAlertsPlugin {
     fn build(&self, app: &mut App) {
