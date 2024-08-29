@@ -11,7 +11,8 @@
 [sh_discord]: https://img.shields.io/discord/1176858176897953872?label=discord&color=5561E6
 [lk_discord]: https://discord.gg/rQNeEnMhus
 
-Allows to trigger web/dom based popups/alerts and textinput in bevy
+Allows to trigger web/dom based popups/alerts and textinput in bevy using wasm-bindgen's [web_sys](https://docs.rs/web-sys/latest/web_sys/).
+It is fully customizable but comes with a batteries included default style (see demo below).
 
 See also:
 [bevy_ios_iap](https://github.com/rustunit/bevy_ios_iap), [bevy_ios_gamecenter](https://github.com/rustunit/bevy_ios_gamecenter), [bevy_ios_notifications](https://github.com/rustunit/bevy_ios_notifications), [bevy_ios_alerts](https://github.com/rustunit/bevy_ios_alerts), [bevy_ios_review](https://github.com/rustunit/bevy_ios_review), [bevy_ios_impact](https://github.com/rustunit/bevy_ios_impact) & [bevy_device_lang](https://github.com/rustunit/bevy_device_lang)
