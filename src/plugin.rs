@@ -1,8 +1,11 @@
 use bevy::prelude::*;
 
+/// Events bridging communication back from the web to bevy
 #[derive(Event, Clone, Debug)]
 pub enum WebAlertResponse {
+    /// A call to `show_textinput` returned with the user clicking the ok button. Contains text of input field.
     InputOk(String),
+    /// A call to `show_textinput` returned with the user clicking the cancel button. Contains text of input field.
     InputCancel(String),
 }
 
