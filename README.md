@@ -23,7 +23,7 @@ See the crate in action in [TinyTakeoff](www.tinytakeoff.com):
 
 ## Features
 * `window.alert()`
-* fully cuntional popup dialog with background darkening with textinput, cancel and ok button, can be styled and customized
+* popup dialog with background darkening, textinput, cancel and ok button (fully customizable)
 
 ## Usage
 
