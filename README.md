@@ -61,7 +61,8 @@ fn process_events(
 
 |bevy|bevy\_ios\_iap|
 |---|---|
-|0.13|0.1,main|
+|0.13|0.2,main|
+|0.13|0.1|
 
 # License
 
