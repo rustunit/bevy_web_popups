@@ -25,7 +25,7 @@ impl Plugin for WebAlertsPlugin {
             app.add_crossbeam_event::<WebAlertResponse>();
 
             let sender = app
-                .world
+                .world()
                 .get_resource::<CrossbeamEventSender<WebAlertResponse>>()
                 .unwrap()
                 .clone();
