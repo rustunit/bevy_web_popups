@@ -1,5 +1,4 @@
 alias c := check
-alias t := test
 alias d := doc
 alias f := format
 alias fmt := format
