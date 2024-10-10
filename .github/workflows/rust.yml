@@ -21,6 +21,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
+      - name: Install dependencies
+        run: sudo apt-get update; sudo apt-get install --no-install-recommends libasound2-dev libudev-dev libwayland-dev libxkbcommon-dev
+      - uses: leafwing-studios/cargo-cache@v2
+        with:
+          sweep-cache: true
+      - uses: extractions/setup-just@v1
+      - name: Check
+        run: just check
+  wasm-check:
+    name: Wasm Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
       - name: Install dependencies
@@ -30,7 +44,7 @@ jobs:
           sweep-cache: true
       - uses: extractions/setup-just@v1
       - name: Check
-        run: just check
+        run: just wasm-check
   format:
     name: Format
     runs-on: ubuntu-latest
