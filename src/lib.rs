@@ -9,7 +9,7 @@ pub use plugin::{WebAlertResponse, WebAlertsPlugin};
 
 /// Show a textinput dialog using DOM elements and communicate back to the bevy side via Events `WebAlertResponse`.
 ///
-/// It will spawn the following DOM structure at the root of <body>:
+/// It will spawn the following DOM structure at the root of `<body>`:
 ///
 /// ```html
 /// <div class="bevy_wasm_popup_root">

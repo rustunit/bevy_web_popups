@@ -9,26 +9,18 @@ pub enum WebAlertResponse {
     InputCancel(String),
 }
 
-/// Bevy plugin to register the required machinery to receive events from web (on wasm) and register the `WebAlertResponse` event with bevy.
+/// Bevy plugin to register the required machinery to receive events from web (on wasm)
+/// and register the `WebAlertResponse` event with bevy.
+/// This turns to a no-op on anything non-wasm, so it does not need to be cfg-gated.
 pub struct WebAlertsPlugin;
 impl Plugin for WebAlertsPlugin {
+    #[cfg_attr(not(target_family = "wasm"), allow(unused_variables))]
     fn build(&self, app: &mut App) {
-        #[cfg(not(target_family = "wasm"))]
-        {
-            app.add_event::<WebAlertResponse>();
-        }
-
         #[cfg(target_family = "wasm")]
         {
-            use bevy_crossbeam_event::{CrossbeamEventApp, CrossbeamEventSender};
+            use bevy_channel_trigger::ChannelTriggerApp;
 
-            app.add_crossbeam_event::<WebAlertResponse>();
-
-            let sender = app
-                .world()
-                .get_resource::<CrossbeamEventSender<WebAlertResponse>>()
-                .unwrap()
-                .clone();
+            let sender = app.add_channel_trigger::<WebAlertResponse>();
 
             crate::channel::set_sender(sender);
         }

@@ -1,6 +1,6 @@
 [package]
 name = "bevy_web_popups"
-version = "0.2.1"
+version = "0.3.0"
 edition = "2021"
 readme = "README.md"
 license = "MIT"
@@ -18,7 +18,7 @@ bevy = { version = "0.14", default-features = false }
 
 [target.'cfg(target_family = "wasm")'.dependencies]
 gloo = { version = "0.11", features = ["utils"] }
-bevy_crossbeam_event = "0.6"
+bevy_channel_trigger = "0.1"
 
 [target.'cfg(target_family = "wasm")'.dependencies.web-sys]
 version = "0.3"

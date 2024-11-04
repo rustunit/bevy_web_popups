@@ -1,9 +1,9 @@
-use bevy_crossbeam_event::CrossbeamEventSender;
+use bevy_channel_trigger::ChannelSender;
 use std::sync::OnceLock;
 
 use crate::plugin::WebAlertResponse;
 
-static SENDER: OnceLock<Option<CrossbeamEventSender<WebAlertResponse>>> = OnceLock::new();
+static SENDER: OnceLock<Option<ChannelSender<WebAlertResponse>>> = OnceLock::new();
 
 //TODO: error logging
 pub fn send_event(e: WebAlertResponse) {
@@ -15,6 +15,6 @@ pub fn send_event(e: WebAlertResponse) {
         .send(e);
 }
 
-pub fn set_sender(sender: CrossbeamEventSender<WebAlertResponse>) {
+pub fn set_sender(sender: ChannelSender<WebAlertResponse>) {
     while SENDER.set(Some(sender.clone())).is_err() {}
 }
