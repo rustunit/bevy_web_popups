@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [0.3.1] - 2024-11-04
+
+### Changed
+* upgrade `bevy_channel_trigger` to version that is backed by crossbeam for smaller wasm build
+
 ## [0.3.0] - 2024-11-04
 
 ### Changed

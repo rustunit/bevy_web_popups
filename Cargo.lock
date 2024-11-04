@@ -387,7 +387,7 @@ dependencies = [
 
 [[package]]
 name = "bevy_web_popups"
-version = "0.3.0"
+version = "0.3.1"
 dependencies = [
  "bevy",
  "bevy_channel_trigger",
