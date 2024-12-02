@@ -27,7 +27,7 @@ See the crate in action in [TinyTakeoff](www.tinytakeoff.com):
 
 ## Usage
 
-Add dependency: `bevy_web_popups = "0.3"`
+Add dependency: `cargo add bevy_web_popups`
 
 Initialize Bevy Plugin:
 
