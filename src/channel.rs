@@ -5,14 +5,11 @@ use crate::plugin::WebAlertResponse;
 
 static SENDER: OnceLock<Option<ChannelSender<WebAlertResponse>>> = OnceLock::new();
 
-//TODO: error logging
 pub fn send_event(e: WebAlertResponse) {
-    SENDER
-        .get()
-        .expect("invalid sender lock")
-        .as_ref()
-        .expect("sender not found")
-        .send(e);
+    let Some(sender) = SENDER.get().map(Option::as_ref).flatten() else {
+        return bevy::log::error!("`WebAlertsPlugin` not installed correctly (no sender found)");
+    };
+    sender.send(e);
 }
 
 pub fn set_sender(sender: ChannelSender<WebAlertResponse>) {
