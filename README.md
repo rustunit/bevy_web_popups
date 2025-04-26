@@ -50,7 +50,7 @@ fn bevy_system() {
 fn on_event(
     trigger: Trigger<WebAlertResponse>,
 ) {
-    let e = trigger.event() 
+    let e = trigger.event()
 
     if let WebAlertResponse::InputOk(text) = e {
         info!("user confirmed with text: {text}");
@@ -75,7 +75,8 @@ fn on_event(
 
 |bevy|this crate|
 |---|---|
-|0.15|0.4,main|
+|0.16|0.5,main|
+|0.15|0.4|
 |0.14|0.2,0.3|
 |0.13|0.1|
 

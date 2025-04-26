@@ -1,10 +1,10 @@
 use gloo::events::EventListener;
-use web_sys::{wasm_bindgen::JsCast, Element, HtmlInputElement};
+use web_sys::{Element, HtmlInputElement, wasm_bindgen::JsCast};
 
 use crate::{channel::send_event, plugin::WebAlertResponse};
 
 static STYLES: &str = r"
-.bevy_wasm_popup_root { 
+.bevy_wasm_popup_root {
    position: absolute;
     width: 100%;
     height: 100%;
@@ -16,7 +16,7 @@ static STYLES: &str = r"
     justify-content: center;
 }
 
-.bevy_wasm_popup_popup { 
+.bevy_wasm_popup_popup {
     background-color: #ababab;
     margin-right: auto;
     margin-left: auto;
@@ -28,7 +28,7 @@ static STYLES: &str = r"
     border-radius: 15px;
 }
 
-.bevy_wasm_popup_text { 
+.bevy_wasm_popup_text {
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
@@ -37,7 +37,7 @@ static STYLES: &str = r"
     border-color: #818181;
 }
 
-.bevy_wasm_popup_buttons { 
+.bevy_wasm_popup_buttons {
     display: flex;
     flex-direction: row;
     padding: 0;
@@ -45,7 +45,7 @@ static STYLES: &str = r"
     gap: 0;
 }
 
-.bevy_wasm_popup_button { 
+.bevy_wasm_popup_button {
     border-radius: 5px;
     border-style: solid;
     border-width: 1px;
@@ -53,7 +53,7 @@ static STYLES: &str = r"
     flex: 1 1 0px;
 }
 
-.bevy_wasm_popup_label { 
+.bevy_wasm_popup_label {
     font-weight: bold;
     font-size: 14px;
 }

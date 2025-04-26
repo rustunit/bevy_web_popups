@@ -1,4 +1,5 @@
-use bevy::prelude::*;
+use bevy_app::prelude::*;
+use bevy_ecs::prelude::*;
 
 /// Events bridging communication back from the web to bevy
 #[derive(Event, Clone, Debug)]
