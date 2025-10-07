@@ -13,7 +13,7 @@ check:
     cargo clippy -- -Dwarnings
 
 wasm-check:
-    cargo clippy --target wasm32-unknown-unknown -- -Dwarnings
+    RUSTFLAGS='--cfg getrandom_backend="wasm_js"' cargo clippy --target wasm32-unknown-unknown -- -Dwarnings
 
 doc:
     cargo doc --all-features --no-deps --document-private-items --keep-going
