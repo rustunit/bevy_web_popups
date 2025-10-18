@@ -14,9 +14,6 @@
 Allows to trigger web/dom based popups/alerts and textinput in bevy using wasm-bindgen's [web_sys](https://docs.rs/web-sys/latest/web_sys/).
 It is fully customizable but comes with a batteries included default style (see demo below).
 
-See also:
-[bevy_ios_iap](https://github.com/rustunit/bevy_ios_iap), [bevy_ios_gamecenter](https://github.com/rustunit/bevy_ios_gamecenter), [bevy_ios_notifications](https://github.com/rustunit/bevy_ios_notifications), [bevy_ios_alerts](https://github.com/rustunit/bevy_ios_alerts), [bevy_ios_review](https://github.com/rustunit/bevy_ios_review), [bevy_ios_impact](https://github.com/rustunit/bevy_ios_impact) & [bevy_device_lang](https://github.com/rustunit/bevy_device_lang)
-
 See the crate in action in [TinyTakeoff](www.tinytakeoff.com):
 
 ![demo](./assets/demo.gif)
@@ -75,7 +72,8 @@ fn on_event(
 
 |bevy|this crate|
 |---|---|
-|0.16|0.5,main|
+|0.17|0.6,main|
+|0.16|0.5|
 |0.15|0.4|
 |0.14|0.2,0.3|
 |0.13|0.1|
